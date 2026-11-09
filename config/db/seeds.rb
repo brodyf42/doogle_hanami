@@ -13,3 +13,32 @@
 #
 #   categories = Hanami.app["relations.categories"]
 #   categories.insert(title: "General")
+
+word_repo = Hanami.app["repos.word_repo"]
+
+[
+  "École",
+  "école",
+  "Café",
+  "cafe\u0301",
+  "résumé",
+  "RÉSUMÉ",
+  "Naïve",
+  "Zoë",
+  "Über",
+  "Ärger",
+  "piñata",
+  "mother-in-law",
+  "Well-being",
+  "x-ray",
+  "o'clock",
+  "ma'am",
+  "rock 'n' roll",
+  "  ice\u00A0cream  ",
+  "ice    cream",
+  "chair",
+  "table",
+  "book"
+].each do |name|
+  word_repo.find_or_create(name)
+end

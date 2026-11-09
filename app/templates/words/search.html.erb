@@ -1,0 +1,9 @@
+<h1>Search Results</h1>
+
+<% if !valid_input %>
+  <p>Search term invalid</p>
+<% elsif word.nil? %>
+  <p>Word not found</p>
+<% else %>
+  <h3>Word: <%= word.name %></h3>
+<% end %>
